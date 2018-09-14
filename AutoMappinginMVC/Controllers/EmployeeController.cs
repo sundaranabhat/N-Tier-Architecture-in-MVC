@@ -13,7 +13,7 @@ namespace AutoMappinginMVC.Controllers
         public ActionResult Index()
         {
             var bal = new EmployeeBAL();
-            var model = new List<Employee1>();
+            var model = new List<Employee>();
             model = bal.EmpList();
             return View(model);
 
@@ -24,21 +24,26 @@ namespace AutoMappinginMVC.Controllers
             if (id != 0)
             {
                 var bal = new EmployeeBAL();
-                var model = new Employee1();
+                var model = new Employee();
 
                 model = bal.DetailByID(id);
+                return View(model);
             }
-            return null;
+            else
+            {
+                return RedirectToAction("Index", "Employee");
+            }
+            
         }
 
         public ActionResult Create()
         {
-            var model = new Employee1();
+            var model = new Employee();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(Employee1 emp)
+        public ActionResult Create(Employee emp)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +63,7 @@ namespace AutoMappinginMVC.Controllers
         {
            
             var bal = new EmployeeBAL();
-            var model = new Employee1();
+            var model = new Employee();
             model = bal.DetailByID(id);
 
             return View(model);
@@ -66,14 +71,14 @@ namespace AutoMappinginMVC.Controllers
 
         [HttpPost]
 
-        public ActionResult Edit(Employee1 emp)
+        public ActionResult Edit(Employee emp)
         {
             if (ModelState.IsValid)
             {
 
 
                 var bal = new EmployeeBAL();
-                var model = new Employee1();
+                var model = new Employee();
                 bal.UpdateEmployee(emp);
                 return RedirectToAction("Index", "Employee");
             }

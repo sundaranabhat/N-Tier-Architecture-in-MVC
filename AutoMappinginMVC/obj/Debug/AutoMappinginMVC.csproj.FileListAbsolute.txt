@@ -81,11 +81,7 @@ c:\users\sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappi
 c:\users\sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\obj\Debug\AutoMappinginMVC.dll
 c:\users\sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\obj\Debug\AutoMappinginMVC.pdb
 C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\Kendo.Mvc.dll
-C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\System.Web.Http.dll
-C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\System.Net.Http.Formatting.dll
 C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\Kendo.Mvc.xml
-C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\System.Web.Http.xml
-C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\System.Net.Http.Formatting.xml
 C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\bg-BG\Kendo.Mvc.resources.dll
 C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\cs-CZ\Kendo.Mvc.resources.dll
 C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\da-DK\Kendo.Mvc.resources.dll
@@ -103,3 +99,5 @@ C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappi
 C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\tr-TR\Kendo.Mvc.resources.dll
 C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\uk-UA\Kendo.Mvc.resources.dll
 C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\zh-CN\Kendo.Mvc.resources.dll
+C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\AutoMapper.dll
+C:\Users\Sundar\documents\visual studio 2015\Projects\AutoMappinginMVC\AutoMappinginMVC\bin\AutoMapper.xml
