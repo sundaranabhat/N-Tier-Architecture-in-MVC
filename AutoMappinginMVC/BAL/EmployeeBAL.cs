@@ -17,31 +17,36 @@ namespace AutoMappinginMVC.BAL
         }
 
 
-        public Employee DetailByID(int id)
+        public EmployeeModel DetailByID(int id)
         {
-            var model = new Employee();
+            var model = new EmployeeModel();
             model = employeeService.GetEmployeeByID(id);
 
             return model;
         }
 
-        public List<Employee> EmpList()
+        public List<EmployeeModel> EmpList()
         {
-            var model = new List<Employee>();
+            var model = new List<EmployeeModel>();
             model = employeeService.GetEmployeeList();
            
             return model;
 
         }
 
-        public void InsertEmployee(Employee emp)
+        public void Insert(EmployeeModel emp)
         {
             employeeService.InsertEmployee(emp);
         }
 
-        public void UpdateEmployee(Employee emp)
+        public void Update(EmployeeModel emp)
         {
             employeeService.UpdateEmployee(emp);
+        }
+
+        public void Delete(int id)
+        {
+            employeeService.DeleteEmployee(id);
         }
     }
 }

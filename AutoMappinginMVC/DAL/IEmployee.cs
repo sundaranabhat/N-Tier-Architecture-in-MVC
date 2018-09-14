@@ -9,10 +9,11 @@ namespace AutoMappinginMVC.DAL
 {
  public  interface IEmployee
     {
-        List<Employee> GetEmployeeList();
-        Employee GetEmployeeByID(int id);
-        void InsertEmployee(Employee model);
-        void UpdateEmployee(Employee model);
+        List<EmployeeModel> GetEmployeeList();
+        EmployeeModel GetEmployeeByID(int id);
+        void InsertEmployee(EmployeeModel model);
+        void UpdateEmployee(EmployeeModel model);
+        void DeleteEmployee(int id);
 
 
     }

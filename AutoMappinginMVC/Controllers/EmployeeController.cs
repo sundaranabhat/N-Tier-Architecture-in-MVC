@@ -13,7 +13,7 @@ namespace AutoMappinginMVC.Controllers
         public ActionResult Index()
         {
             var bal = new EmployeeBAL();
-            var model = new List<Employee>();
+            var model = new List<EmployeeModel>();
             model = bal.EmpList();
             return View(model);
 
@@ -24,7 +24,7 @@ namespace AutoMappinginMVC.Controllers
             if (id != 0)
             {
                 var bal = new EmployeeBAL();
-                var model = new Employee();
+                var model = new EmployeeModel();
 
                 model = bal.DetailByID(id);
                 return View(model);
@@ -33,22 +33,22 @@ namespace AutoMappinginMVC.Controllers
             {
                 return RedirectToAction("Index", "Employee");
             }
-            
+
         }
 
         public ActionResult Create()
         {
-            var model = new Employee();
+            var model = new EmployeeModel();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Create(Employee emp)
+        public ActionResult Create(EmployeeModel emp)
         {
             if (ModelState.IsValid)
             {
                 var bal = new EmployeeBAL();
-                bal.InsertEmployee(emp);
+                bal.Insert(emp);
                 return RedirectToAction("Index", "Employee");
             }
 
@@ -61,25 +61,21 @@ namespace AutoMappinginMVC.Controllers
 
         public ActionResult Edit(int id)
         {
-           
-            var bal = new EmployeeBAL();
-            var model = new Employee();
-            model = bal.DetailByID(id);
 
+            var bal = new EmployeeBAL();
+            var model = new EmployeeModel();
+            model = bal.DetailByID(id);
             return View(model);
         }
 
         [HttpPost]
 
-        public ActionResult Edit(Employee emp)
+        public ActionResult Edit(EmployeeModel emp)
         {
             if (ModelState.IsValid)
             {
-
-
                 var bal = new EmployeeBAL();
-                var model = new Employee();
-                bal.UpdateEmployee(emp);
+                bal.Update(emp);
                 return RedirectToAction("Index", "Employee");
             }
 
@@ -87,6 +83,14 @@ namespace AutoMappinginMVC.Controllers
             {
                 return View();
             }
+        }
+
+
+        public ActionResult Delete(int id)
+        {
+            var bal = new EmployeeBAL();
+            bal.Delete(id);
+            return RedirectToAction("Index", "Employee");
         }
 
     }
