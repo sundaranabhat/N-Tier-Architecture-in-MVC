@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using AutoMappinginMVC.Models;
-using AutoMapper;
 
 namespace AutoMappinginMVC.DAL
 {
@@ -12,30 +11,22 @@ namespace AutoMappinginMVC.DAL
     {
         public Employee GetEmployeeByID(int id)
         {
-            using (var db = new CRUDDBEntities())
+          using(  var db = new CRUDDBEntities1())
             {
-                //create a Mapper
-                 Mapper.Initialize(cfg =>cfg.CreateMap<Employee, Employee>() );
-                var tempEmp = db.Employees.FirstOrDefault(x => x.EmployeeID == id);
-                //Map the source to the destination
-                var model = Mapper.Map<Employee, Employee>(tempEmp);
+                var empValue = db.Employees.FirstOrDefault(x => x.EmployeeID == id);
+                var model = new Employee();
+                if(empValue != null)
+                {
+                    model.EmployeeID = empValue.EmployeeID;
+                    model.Name = empValue.Name;
+                    model.Age = empValue.Age;
+                    model.Salary = empValue.Salary;
+                    model.Position = empValue.Position;
+
+                }
                 return model;
             }
-
-            //var empValue = db.Employees.FirstOrDefault(x => x.EmployeeID == id);
-            //var model = new Employee();
-            //if(empValue != null)
-            //{
-            //    model.EmployeeID = empValue.EmployeeID;
-            //    model.Name = empValue.Name;
-            //    model.Age = empValue.Age;
-            //    model.Salary = empValue.Salary;
-            //    model.Position = empValue.Position;
-
-            //}
-            //return model;
         }
-
 
         public void InsertEmployee(Employee model)
         {
@@ -79,7 +70,7 @@ namespace AutoMappinginMVC.DAL
                         TempList.Add(model);
                     }
                 }
-
+                
 
                 return TempList;
             }
@@ -88,7 +79,7 @@ namespace AutoMappinginMVC.DAL
 
         public void UpdateEmployee(Employee model)
         {
-            using (var db = new CRUDDBEntities())
+            using(var db = new Models.CRUDDBEntities1())
             {
                 var EmpToEdit = db.Employees.FirstOrDefault(x => x.EmployeeID == model.EmployeeID);
 
